@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="keywords" content="">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>TheSaaS - Responsive Bootstrap SaaS, Software & WebApp Template</title>
 
     <!-- Styles -->
@@ -46,7 +46,9 @@
 </main>
 <!-- END Main container -->
 
-
+@if(!auth()->check())
+        <login></login>
+@endif
 <!-- Footer -->
 <footer class="site-footer">
     <div class="container">
@@ -60,6 +62,7 @@
             </div>
         </div>
     </div>
+
 </footer>
 <!-- END Footer -->
 </div>
